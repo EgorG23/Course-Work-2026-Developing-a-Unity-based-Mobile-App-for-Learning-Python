@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1734854744096716892}
   - component: {fileID: 1005072248669482653}
   m_Layer: 5
-  m_Name: Next
+  m_Name: BackToMenu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -38,7 +38,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 442, y: 96}
+  m_SizeDelta: {x: 355, y: 96}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7428102882374893250
 CanvasRenderer:
@@ -68,7 +68,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -7631959422074867024, guid: 2b174155dd913a140aa1c6b3ea5c75b3, type: 3}
+  m_Sprite: {fileID: -4014581549240292487, guid: 69fee009e03a02b4db717c20aa4418da, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -146,7 +146,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55ca5b3bdd330c74f87c3c3d8158e9ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LessonPrefabButton
-  action: 0
+  action: 3
 --- !u!1 &234390932210484989
 GameObject:
   m_ObjectHideFlags: 0
@@ -176,8 +176,8 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 8044854166867465329}
   - {fileID: 1039644416548313329}
+  - {fileID: 8044854166867465329}
   m_Father: {fileID: 8438626639729285939}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -300,7 +300,7 @@ GameObject:
   - component: {fileID: 3618679767858043092}
   - component: {fileID: 2281244216363943357}
   m_Layer: 5
-  m_Name: Back
+  m_Name: Next
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -324,7 +324,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 355, y: 96}
+  m_SizeDelta: {x: 442, y: 96}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4258143593182853987
 CanvasRenderer:
@@ -347,15 +347,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 0.27058825, g: 0, b: 0.6, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 7712206304328813202, guid: 1d22421536a90224c95c2287fac7c999, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -432,7 +432,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55ca5b3bdd330c74f87c3c3d8158e9ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LessonPrefabButton
-  action: 3
+  action: 0
 --- !u!1 &4887967750079252992
 GameObject:
   m_ObjectHideFlags: 0
@@ -498,17 +498,17 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u0414\u0430\u043B\u0435\u0435"
+  m_text: "\u0412 \u043C\u0435\u043D\u044E"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 9f030b11b2233ff4282462e299b1dfaa, type: 2}
-  m_sharedMaterial: {fileID: 4648945616573475874, guid: 9f030b11b2233ff4282462e299b1dfaa, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 817a864758752c948b7c0c77c200ec46, type: 2}
+  m_sharedMaterial: {fileID: -2048716718375569414, guid: 817a864758752c948b7c0c77c200ec46, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281479730
-  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+    rgba: 4288217156
+  m_fontColor: {r: 0.26666668, g: 0, b: 0.6, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -531,7 +531,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 1
+  m_fontStyle: 0
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -672,10 +672,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u0412 \u043C\u0435\u043D\u044E"
+  m_text: "\u0414\u0430\u043B\u0435\u0435"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 9f030b11b2233ff4282462e299b1dfaa, type: 2}
-  m_sharedMaterial: {fileID: 4648945616573475874, guid: 9f030b11b2233ff4282462e299b1dfaa, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 817a864758752c948b7c0c77c200ec46, type: 2}
+  m_sharedMaterial: {fileID: -2048716718375569414, guid: 817a864758752c948b7c0c77c200ec46, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -705,7 +705,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 1
+  m_fontStyle: 0
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
