@@ -522,7 +522,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LessonButton
   lessonScreens:
-  - {fileID: 7764393200182977372, guid: d4f80fe023a0eaf45b2da0c551c31a3d, type: 3}
+  - {fileID: 104804046540077061, guid: d4f80fe023a0eaf45b2da0c551c31a3d, type: 3}
   - {fileID: 564314763264983721, guid: 8c19bdbfee70cbe4c9928978a8ff5e9b, type: 3}
   - {fileID: 2178604594052127020, guid: ec3f7525a2ef87241a17631489d27d29, type: 3}
   practiceSceneName: Practice2_KvestScene
@@ -1412,7 +1412,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LessonButton
   lessonScreens:
-  - {fileID: 439291508417426234, guid: be9ee17baddbd894bb7cde2e2d8d65c1, type: 3}
+  - {fileID: 7498809714869587332, guid: be9ee17baddbd894bb7cde2e2d8d65c1, type: 3}
   - {fileID: 1734126587681931485, guid: 8392e42223591194da0dc3abc809018b, type: 3}
   - {fileID: 4193134535353320827, guid: 73fd0ce00d05acc438845ac0170ffb4b, type: 3}
   practiceSceneName: Practice1_KvestScene
@@ -1642,7 +1642,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LessonButton
   lessonScreens:
-  - {fileID: 7939139674172754890, guid: 5473843d87428ed439797f9d2298b3ee, type: 3}
+  - {fileID: 104804046540077061, guid: d4f80fe023a0eaf45b2da0c551c31a3d, type: 3}
   - {fileID: 3368299574410553500, guid: 55574c5e7b606a341865f0c70434f65e, type: 3}
   - {fileID: 3788257234215755413, guid: 44aa6b1e365277a44bd7b8320b625cf4, type: 3}
   practiceSceneName: Practice3_KvestScene
@@ -1793,7 +1793,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LessonButton
   lessonScreens:
-  - {fileID: 4952616898330525847, guid: cd2eb6c7e5df8ef409bfc792622924b2, type: 3}
+  - {fileID: 9070080740393240573, guid: cd2eb6c7e5df8ef409bfc792622924b2, type: 3}
   - {fileID: 6952374977357146237, guid: 439583a11cb7cc245bcb474c76e9ca53, type: 3}
   - {fileID: 7475784134463767686, guid: 782da7e5c9d4dd341b8d1db064a0f8ad, type: 3}
   practiceSceneName: Practice0_KvestScene
