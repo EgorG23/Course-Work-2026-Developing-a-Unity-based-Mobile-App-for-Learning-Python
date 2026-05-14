@@ -34,10 +34,10 @@ RectTransform:
   - {fileID: 1919258506243363068}
   m_Father: {fileID: 7948927044821589669}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1316.0007, y: 1157.5933}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 540, y: -834.09326}
+  m_SizeDelta: {x: 0, y: 1157.5933}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8203336653428147962
 CanvasRenderer:
@@ -178,6 +178,7 @@ GameObject:
   - component: {fileID: 1290536413290967093}
   - component: {fileID: 5574623056359914693}
   - component: {fileID: 105428815946149232}
+  - component: {fileID: 2188292685756396546}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -286,30 +287,30 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 8061131502915635491}
         m_TargetAssemblyTypeName: TakeKey, Assembly-CSharp
         m_MethodName: TakeKeyMethod
-        m_Mode: 1
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgumentAssemblyTypeName: 
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: ScreenButton, Assembly-CSharp
-        m_MethodName: GoToScreen
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+--- !u!114 &2188292685756396546
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3259650347316294293}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 841675a1f765949f9845e978156147cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::KeyPickupButton
 --- !u!1 &4323672396067759197
 GameObject:
   m_ObjectHideFlags: 0
@@ -322,6 +323,7 @@ GameObject:
   - component: {fileID: 2961038644474889350}
   - component: {fileID: 1072706022841644169}
   - component: {fileID: 3107804322924349190}
+  - component: {fileID: 5308721675287201400}
   m_Layer: 5
   m_Name: Back
   m_TagString: Untagged
@@ -442,6 +444,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &5308721675287201400
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4323672396067759197}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44f92f2f7a2a7e6408b43fe93f1941e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ScreenButton
+  targetScreen: {fileID: 0}
 --- !u!1 &5304019115999930203
 GameObject:
   m_ObjectHideFlags: 0
@@ -515,6 +530,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2129720707643853660}
+  - component: {fileID: 8061131502915635491}
   m_Layer: 5
   m_Name: Safe Open
   m_TagString: Untagged
@@ -543,3 +559,19 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &8061131502915635491
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5481265377481406628}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18e1612d5b033f64d887c1ab7ff39cca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TakeKey
+  keyNotification: {fileID: 0}
+  objectToHide: {fileID: 3259650347316294293}
+  hideAfterTake: 1
+  notificationDuration: 2

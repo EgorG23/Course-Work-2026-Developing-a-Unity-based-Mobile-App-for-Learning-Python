@@ -228,6 +228,7 @@ GameObject:
   - component: {fileID: 5154020428155782444}
   - component: {fileID: 119043784228114435}
   - component: {fileID: 1605518254353349081}
+  - component: {fileID: 4134109710327407424}
   m_Layer: 5
   m_Name: Go
   m_TagString: Untagged
@@ -349,6 +350,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &4134109710327407424
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3129725326686843507}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44f92f2f7a2a7e6408b43fe93f1941e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ScreenButton
+  targetScreen: {fileID: 0}
 --- !u!1 &4425929489555939101
 GameObject:
   m_ObjectHideFlags: 0

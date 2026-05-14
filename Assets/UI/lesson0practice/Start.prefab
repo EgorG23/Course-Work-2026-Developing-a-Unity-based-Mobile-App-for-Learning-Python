@@ -237,6 +237,7 @@ GameObject:
   - component: {fileID: 1870791932965976289}
   - component: {fileID: 6887677066240423674}
   - component: {fileID: 3934776714201172433}
+  - component: {fileID: 8332765722802408680}
   m_Layer: 5
   m_Name: Go
   m_TagString: Untagged
@@ -346,7 +347,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 8332765722802408680}
         m_TargetAssemblyTypeName: ScreenButton, Assembly-CSharp
         m_MethodName: GoToScreen
         m_Mode: 1
@@ -358,6 +359,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &8332765722802408680
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7201854438314899598}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44f92f2f7a2a7e6408b43fe93f1941e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ScreenButton
+  targetScreen: {fileID: 9208842598546498821, guid: 30a17ecd399d48e49af3a500b2d0cd58, type: 3}
 --- !u!1 &7284650241056454846
 GameObject:
   m_ObjectHideFlags: 0
@@ -863,6 +877,7 @@ GameObject:
   - component: {fileID: 2967473236695835361}
   - component: {fileID: 2291504027521052167}
   - component: {fileID: 8367285675977132405}
+  - component: {fileID: 8568356368493075171}
   m_Layer: 5
   m_Name: Back
   m_TagString: Untagged
@@ -972,7 +987,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 8568356368493075171}
         m_TargetAssemblyTypeName: ScreenButton, Assembly-CSharp
         m_MethodName: GoToMenu
         m_Mode: 1
@@ -984,3 +999,16 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &8568356368493075171
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9142383996183353244}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44f92f2f7a2a7e6408b43fe93f1941e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ScreenButton
+  targetScreen: {fileID: 6407583602959444100}
