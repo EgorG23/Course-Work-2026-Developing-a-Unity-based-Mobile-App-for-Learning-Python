@@ -64,14 +64,17 @@ public static class Practice0QuestFixer
         GameObject exit = FindChild(screenContainer.transform, "Exit");
         GameObject end = FindChild(screenContainer.transform, "End");
         GameObject keyNotification = FindChild(screenContainer.transform, "KeyNotification");
+        GameObject lockerOpenPrefab = AssetDatabase.LoadAssetAtPath<GameObject>("Assets/UI/lesson0practice/LockerOpen.prefab");
+        GameObject endPrefab = AssetDatabase.LoadAssetAtPath<GameObject>("Assets/UI/lesson0practice/End.prefab");
+        GameObject keyNotificationPrefab = AssetDatabase.LoadAssetAtPath<GameObject>("Assets/UI/lesson0practice/KeyNotification.prefab");
 
         SavePrefabFix("Assets/UI/lesson0practice/Terminal.prefab", root =>
         {
             FixTerminalLayout(root);
             FixTerminalEvents(root);
         });
-        SavePrefabFix("Assets/UI/lesson0practice/Safe Open.prefab", root => FixKeyPickup(root, null, null));
-        SavePrefabFix("Assets/UI/lesson0practice/Exit.prefab", root => FixDoor(root, null));
+        SavePrefabFix("Assets/UI/lesson0practice/Safe Open.prefab", root => FixKeyPickup(root, keyNotificationPrefab, lockerOpenPrefab));
+        SavePrefabFix("Assets/UI/lesson0practice/Exit.prefab", root => FixDoor(root, endPrefab));
 
         if (terminal != null)
         {
@@ -189,14 +192,34 @@ public static class Practice0QuestFixer
 
         takeKey.keyNotification = keyNotification;
         takeKey.objectToHide = keyButton;
-        takeKey.hideAfterTake = keyButton != null;
+        takeKey.hideAfterTake = false;
         takeKey.notificationDuration = 2f;
+        takeKey.keyVisual = keyButton != null ? keyButton.GetComponent<RectTransform>() : null;
+        takeKey.moveKeyToInventory = false;
+        takeKey.autoReturnToPreviousScreen = false;
+        takeKey.hideBakedKeyWithMask = true;
+        takeKey.keyMaskSizeMultiplier = new Vector2(0.55f, 0.85f);
 
-        ScreenButton backButton = FindPath(safeOpen.transform, "Content/Back")?.GetComponent<ScreenButton>();
-        if (backButton != null && backTarget != null)
+        GameObject backObject = FindPath(safeOpen.transform, "Content/Back");
+        ScreenButton backButton = backObject != null ? backObject.GetComponent<ScreenButton>() : null;
+        if (backButton == null && backObject != null)
+        {
+            backButton = backObject.AddComponent<ScreenButton>();
+        }
+
+        if (backButton != null)
         {
             backButton.targetScreen = backTarget;
             EditorUtility.SetDirty(backButton);
+        }
+
+        if (backObject != null)
+        {
+            Button backUiButton = backObject.GetComponent<Button>();
+            if (backUiButton != null && backButton != null)
+            {
+                ReplacePersistentClick(backUiButton, backButton.GoToScreen);
+            }
         }
 
         Button button = keyButton != null ? keyButton.GetComponent<Button>() : null;

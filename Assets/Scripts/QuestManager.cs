@@ -9,6 +9,8 @@ public class QuestManager : MonoBehaviour
     public bool knowsVersion = false;
     public bool hasKey = false;
     public string pythonVersion = "";
+    public bool powerFixed = false;
+    public bool codeSolved = false;
 
     void Awake()
     {
@@ -21,5 +23,8 @@ public class QuestManager : MonoBehaviour
         knowsCommand = false;
         knowsVersion = false;
         hasKey = false;
+        pythonVersion = "";
+        powerFixed = false;
+        codeSolved = false;
     }
 }

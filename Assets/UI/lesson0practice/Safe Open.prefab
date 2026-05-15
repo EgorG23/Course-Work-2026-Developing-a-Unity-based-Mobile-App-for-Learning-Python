@@ -36,7 +36,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 540, y: -834.09326}
+  m_AnchoredPosition: {x: 515.25, y: -578.79663}
   m_SizeDelta: {x: 0, y: 1157.5933}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8203336653428147962
@@ -432,13 +432,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: PracticeManager, Assembly-CSharp
-        m_MethodName: ShowScreen
-        m_Mode: 2
+      - m_Target: {fileID: 5308721675287201400}
+        m_TargetAssemblyTypeName: ScreenButton, Assembly-CSharp
+        m_MethodName: GoToScreen
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_ObjectArgumentAssemblyTypeName: 
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -456,7 +456,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44f92f2f7a2a7e6408b43fe93f1941e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ScreenButton
-  targetScreen: {fileID: 0}
+  targetScreen: {fileID: 6254840609825295403, guid: a8c7eedbbddb50143be3451f09fdda6d, type: 3}
 --- !u!1 &5304019115999930203
 GameObject:
   m_ObjectHideFlags: 0
@@ -571,7 +571,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18e1612d5b033f64d887c1ab7ff39cca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TakeKey
-  keyNotification: {fileID: 0}
+  keyNotification: {fileID: 1064351349812422700, guid: af43ea4cb02ee8842bea38f1aca9bf45, type: 3}
   objectToHide: {fileID: 3259650347316294293}
   hideAfterTake: 1
   notificationDuration: 2
+  notificationMessage: "\u041A\u043B\u044E\u0447\u0438\u043A \u043D\u0430\u0439\u0434\u0435\u043D"
+  keyVisual: {fileID: 1919258506243363068}
+  inventoryTarget: {fileID: 0}
+  moveKeyToInventory: 1
+  moveDuration: 0.4
+  inventoryScale: 0.4
+  inventoryBottomScreenPercent: 0.12
+  autoReturnToPreviousScreen: 0
+  autoReturnDelay: 0.2
+  hideBakedKeyWithMask: 0
+  keyMaskColor: {r: 0.17254902, g: 0.17254902, b: 0.19607843, a: 1}
+  keyMaskSizeMultiplier: {x: 0.55, y: 0.85}

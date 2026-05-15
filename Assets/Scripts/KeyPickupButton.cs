@@ -30,7 +30,7 @@ public class KeyPickupButton : MonoBehaviour
 
         if (key != null)
         {
-            key.TakeKeyMethod();
+            key.TakeKeyMethodFromObject(gameObject);
         }
     }
 }
