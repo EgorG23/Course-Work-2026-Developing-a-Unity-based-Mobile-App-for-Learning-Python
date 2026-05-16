@@ -15,6 +15,7 @@ public class Door : MonoBehaviour
         if (hasKey)
         {
             Debug.Log("Door opened");
+            TakeKey.HideInventoryKeyIconGlobal();
 
             if (PracticeManager.Instance != null && successScreen != null)
             {
