@@ -9,4 +9,9 @@ public class MenuManager : MonoBehaviour
     {
         SceneManager.LoadScene("LessonsList");
     }
+
+    public void GoToAchieve()
+    {
+        SceneManager.LoadScene("Achievements");
+    }
 }

@@ -87,7 +87,6 @@ GameObject:
   - component: {fileID: 5075122338191169163}
   - component: {fileID: 9005586897188310480}
   - component: {fileID: 8443941842542347518}
-  - component: {fileID: 194598421852404592}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -196,7 +195,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 194598421852404592}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: ScreenButton, Assembly-CSharp
         m_MethodName: GoToScreen
         m_Mode: 1
@@ -208,19 +207,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &194598421852404592
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1995873086629874995}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 44f92f2f7a2a7e6408b43fe93f1941e2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ScreenButton
-  targetScreen: {fileID: 7148196026606052110, guid: 0e31cdfc9ec144e4a8f22d7f4af1c4d8, type: 3}
 --- !u!1 &2328348195429665928
 GameObject:
   m_ObjectHideFlags: 0
@@ -292,10 +278,10 @@ RectTransform:
   - {fileID: 1557895804013706061}
   m_Father: {fileID: 8866005964528870125}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 1030, y: -1744.0933}
-  m_SizeDelta: {x: 0, y: 1157.5933}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 1316.0007, y: 1157.5933}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2523180125892879037
 CanvasRenderer:
@@ -361,7 +347,6 @@ GameObject:
   - component: {fileID: 5566025147258927336}
   - component: {fileID: 192015233394357222}
   - component: {fileID: 6853498748638278399}
-  - component: {fileID: 4518376035655097123}
   m_Layer: 5
   m_Name: Back
   m_TagString: Untagged
@@ -482,19 +467,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &4518376035655097123
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5959200453029332769}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 44f92f2f7a2a7e6408b43fe93f1941e2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ScreenButton
-  targetScreen: {fileID: 9208842598546498821, guid: 30a17ecd399d48e49af3a500b2d0cd58, type: 3}
 --- !u!1 &6360368504480017774
 GameObject:
   m_ObjectHideFlags: 0
