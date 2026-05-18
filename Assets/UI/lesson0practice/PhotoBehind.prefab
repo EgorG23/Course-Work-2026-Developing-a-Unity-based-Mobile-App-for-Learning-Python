@@ -188,6 +188,7 @@ GameObject:
   - component: {fileID: 7053574137777682571}
   - component: {fileID: 5967969964705371817}
   - component: {fileID: 5425911544018814607}
+  - component: {fileID: 1374000363022575056}
   m_Layer: 5
   m_Name: Back
   m_TagString: Untagged
@@ -296,7 +297,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1374000363022575056}
         m_TargetAssemblyTypeName: ScreenButton, Assembly-CSharp
         m_MethodName: GoToScreen
         m_Mode: 1
@@ -308,6 +309,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &1374000363022575056
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6342525302744933194}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44f92f2f7a2a7e6408b43fe93f1941e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ScreenButton
+  targetScreen: {fileID: 637330622504217775, guid: 7bac5865e1a48ae4ba2c1563e53cd70e, type: 3}
 --- !u!1 &6412811349287502678
 GameObject:
   m_ObjectHideFlags: 0

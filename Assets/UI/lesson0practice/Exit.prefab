@@ -148,6 +148,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2379352695577447456}
+  - component: {fileID: 5929118422383491115}
   m_Layer: 5
   m_Name: Exit
   m_TagString: Untagged
@@ -176,6 +177,22 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &5929118422383491115
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7002709015880755430}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 325077ea751344a48934743a46b3fcde, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Door
+  successScreen: {fileID: 9053245806868932215, guid: fae6334b758349e48a1c89b6f0bc1871, type: 3}
+  noKeyScreen: {fileID: 0}
+  finishPracticeIfNoSuccessScreen: 1
+  fallbackSceneName: LessonsList
 --- !u!1 &8288888682238644623
 GameObject:
   m_ObjectHideFlags: 0
@@ -188,6 +205,7 @@ GameObject:
   - component: {fileID: 2132201994008095550}
   - component: {fileID: 93097577323834104}
   - component: {fileID: 8950693024537823681}
+  - component: {fileID: 7060529504482620483}
   m_Layer: 5
   m_Name: Back
   m_TagString: Untagged
@@ -296,7 +314,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 7060529504482620483}
         m_TargetAssemblyTypeName: ScreenButton, Assembly-CSharp
         m_MethodName: GoToScreen
         m_Mode: 1
@@ -308,6 +326,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &7060529504482620483
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8288888682238644623}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44f92f2f7a2a7e6408b43fe93f1941e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ScreenButton
+  targetScreen: {fileID: 9208842598546498821, guid: 30a17ecd399d48e49af3a500b2d0cd58, type: 3}
 --- !u!1 &8432585650975497803
 GameObject:
   m_ObjectHideFlags: 0
@@ -320,6 +351,7 @@ GameObject:
   - component: {fileID: 1363470287969947664}
   - component: {fileID: 236970235429763145}
   - component: {fileID: 222777998352631818}
+  - component: {fileID: 3228285593733299495}
   m_Layer: 5
   m_Name: Door
   m_TagString: Untagged
@@ -398,3 +430,59 @@ MonoBehaviour:
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.AspectRatioFitter
   m_AspectMode: 2
   m_AspectRatio: 1.1368421
+--- !u!114 &3228285593733299495
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8432585650975497803}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 236970235429763145}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5929118422383491115}
+        m_TargetAssemblyTypeName: Door, Assembly-CSharp
+        m_MethodName: TryOpen
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
