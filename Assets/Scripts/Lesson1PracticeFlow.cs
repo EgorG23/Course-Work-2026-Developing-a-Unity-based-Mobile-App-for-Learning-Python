@@ -133,6 +133,8 @@ public class Lesson1PracticeFlow : MonoBehaviour
     }
 
 #if UNITY_EDITOR
+    private bool pendingValidationRefresh;
+
     private void OnValidate()
     {
         if (Application.isPlaying)
@@ -140,15 +142,32 @@ public class Lesson1PracticeFlow : MonoBehaviour
             return;
         }
 
-        if (createPuzzleInEditor)
+        if (pendingValidationRefresh)
         {
-            EnsureEditorPuzzleExists();
+            return;
         }
 
-        if (createHotspotsInEditor)
+        pendingValidationRefresh = true;
+
+        UnityEditor.EditorApplication.delayCall += () =>
         {
-            EnsureEditorHotspotsExist();
-        }
+            pendingValidationRefresh = false;
+
+            if (this == null)
+            {
+                return;
+            }
+
+            if (createPuzzleInEditor)
+            {
+                EnsureEditorPuzzleExists();
+            }
+
+            if (createHotspotsInEditor)
+            {
+                EnsureEditorHotspotsExist();
+            }
+        };
     }
 
     [ContextMenu("Create Electricity Puzzle In Scene")]
@@ -1422,6 +1441,11 @@ public class Lesson1PracticeFlow : MonoBehaviour
 
         foreach (Transform child in toRemove)
         {
+            if (child == null)
+            {
+                continue;
+            }
+
 #if UNITY_EDITOR
             if (!Application.isPlaying)
             {
