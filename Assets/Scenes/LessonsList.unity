@@ -2776,6 +2776,58 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ButtonMove
   angle: 10
   speed: 2
+--- !u!1 &2109206386
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2109206388}
+  - component: {fileID: 2109206387}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2109206387
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2109206386}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03d15fd11f6388f43860a92f0399fd88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AssistantManager
+  closeButton: {fileID: 0}
+  userInputField: {fileID: 0}
+  chatHistoryText: {fileID: 0}
+  sendButton: {fileID: 0}
+  chatScrollRect: {fileID: 0}
+  apiKey: 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
+  apiUrl: https://openrouter.ai/api/v1/chat/completions
+  modelName: openrouter/free
+--- !u!4 &2109206388
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2109206386}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 898.1034, y: 880.30206, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2116862869
 GameObject:
   m_ObjectHideFlags: 0
@@ -2935,3 +2987,4 @@ SceneRoots:
   - {fileID: 1189374534}
   - {fileID: 154313171}
   - {fileID: 411888285}
+  - {fileID: 2109206388}

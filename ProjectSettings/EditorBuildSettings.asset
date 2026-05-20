@@ -30,6 +30,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Practice3_KvestScene.unity
     guid: 566406ac657adff4ba678dee676d3a67
   - enabled: 1
+    path: Assets/Scenes/Vorona.unity
+    guid: 38dd09febd5815542b1b78b81d11af0c
+  - enabled: 1
     path: Assets/Scenes/Achievements.unity
     guid: cbf1ea2b713092547aaf8617abbf3ae8
   m_configObjects:

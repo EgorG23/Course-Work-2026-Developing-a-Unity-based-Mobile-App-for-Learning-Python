@@ -35,6 +35,15 @@ public class LessonManager : MonoBehaviour
         currentScreen = Instantiate(screens[index], screenContainer);
 
         glitchEffect?.TriggerGlitch();
+
+        AssistantManager assistant = FindFirstObjectByType<AssistantManager>();
+        if (assistant != null)
+        {
+            string topicName = LessonLoader.Instance != null ? LessonLoader.Instance.lessonId : "Изучение Python";
+            string slideName = screens[index] != null ? screens[index].name : "Слайд " + (index + 1);
+            
+           
+}
     }
 
     public void Next()
