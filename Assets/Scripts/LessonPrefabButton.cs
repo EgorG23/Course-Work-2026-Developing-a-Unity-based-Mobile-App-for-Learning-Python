@@ -8,7 +8,8 @@ public class LessonPrefabButton : MonoBehaviour
         Next,
         Back,
         StartPractice,
-        GoToMenu
+        GoToMenu,
+        FinishPractice // <-- Добавили действие для кнопки "Далее" на экране победы
     }
 
     public ActionType action;
@@ -22,9 +23,24 @@ public class LessonPrefabButton : MonoBehaviour
 
     public void OnClick()
     {
+        // Для завершения практики LessonManager не нужен, поэтому обрабатываем FinishPractice отдельно
+        if (action == ActionType.FinishPractice)
+        {
+            if (PracticeManager.Instance != null)
+            {
+                PracticeManager.Instance.FinishPractice();
+            }
+            else
+            {
+                SceneManager.LoadScene("LessonsList");
+            }
+            return;
+        }
+
+        // Для остальных действий проверяем наличие LessonManager
         if (manager == null)
         {
-            Debug.LogError("��� LM");
+            Debug.LogError("Нет LM (LessonManager)");
             return;
         }
 

@@ -68,6 +68,12 @@ public class LessonManager : MonoBehaviour
 
     void LoadPractice()
     {
+        // --- ВЫДАЕМ НАГРАДУ ЗА ЛЕКЦИЮ ПЕРЕД ЗАГРУЗКОЙ ПРАКТИКИ ---
+        if (GameManager.Instance != null)
+        {
+            GameManager.Instance.CompleteTheory();
+        }
+
         SceneManager.LoadScene(LessonLoader.Instance.practiceScene);
     }
 }

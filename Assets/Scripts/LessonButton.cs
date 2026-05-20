@@ -8,6 +8,9 @@ public class LessonButton : MonoBehaviour
     public string practiceSceneName;
     public string lessonId;
 
+    [Header("Индекс урока для Банка (0, 1, 2, 3)")]
+    public int lessonIndex;
+
     public void OpenLesson()
     {
         if (LessonLoader.Instance == null)
@@ -19,6 +22,12 @@ public class LessonButton : MonoBehaviour
         LessonLoader.Instance.screens = lessonScreens;
         LessonLoader.Instance.practiceScene = practiceSceneName;
         LessonLoader.Instance.lessonId = lessonId;
+
+        if (GameManager.Instance != null)
+        {
+            GameManager.Instance.currentLessonIndex = lessonIndex;
+            Debug.Log($"Переход на урок. Банк переключен на индекс: {lessonIndex}");
+        }
 
         SceneManager.LoadScene("LessonScene");
     }

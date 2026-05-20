@@ -66,6 +66,11 @@ public class PracticeManager : MonoBehaviour
         {
             Debug.LogError("startScreen is not assigned");
         }
+        
+        if (GameManager.Instance != null)
+        {
+            GameManager.Instance.StartPracticeTimer();
+        }
     }
 
     void Update()
@@ -97,6 +102,10 @@ public class PracticeManager : MonoBehaviour
             if (IsSceneScreen(currentScreen))
             {
                 currentScreen.SetActive(false);
+            }
+            else
+            {
+                Destroy(currentScreen);
             }
         }
 
@@ -145,16 +154,13 @@ public class PracticeManager : MonoBehaviour
         ApplyAdaptiveBackButtons(currentScreen);
     }
 
+    // МЕТОД ЗАВЕРШЕНИЯ ПРАКТИКИ (ВЫЗЫВАЕТСЯ КНОПКОЙ «ДАЛЕЕ»)
     public void FinishPractice()
     {
-        if (GameManager.Instance != null
-            && GameManager.Instance.practiceCompleted != null
-            && GameManager.Instance.currentLessonIndex >= 0
-            && GameManager.Instance.currentLessonIndex < GameManager.Instance.practiceCompleted.Length)
+        // --- ВЫДАЕМ 10 МОНЕТ ЗА УСПЕШНУЮ ПРАКТИКУ ---
+        if (GameManager.Instance != null)
         {
-            GameManager.Instance.practiceCompleted[
-                GameManager.Instance.currentLessonIndex
-            ] = true;
+            GameManager.Instance.CompletePractice();
         }
         else
         {
@@ -166,20 +172,6 @@ public class PracticeManager : MonoBehaviour
 
     public void ExitToMenu()
     {
-        if (GameManager.Instance != null
-            && GameManager.Instance.practiceCompleted != null
-            && GameManager.Instance.currentLessonIndex >= 0
-            && GameManager.Instance.currentLessonIndex < GameManager.Instance.practiceCompleted.Length)
-        {
-            GameManager.Instance.practiceCompleted[
-                GameManager.Instance.currentLessonIndex
-            ] = false;
-        }
-        else
-        {
-            Debug.LogWarning("GameManager is missing, exiting without progress update.");
-        }
-
         SceneManager.LoadScene("LessonsList");
     }
 
@@ -217,6 +209,7 @@ public class PracticeManager : MonoBehaviour
         {
             if (child != null && child.gameObject != keepActive)
             {
+                
                 child.gameObject.SetActive(false);
             }
         }
