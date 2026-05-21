@@ -348,7 +348,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 217.25, y: -1290}
+  m_AnchoredPosition: {x: 543.53827, y: -1181.3843}
   m_SizeDelta: {x: 800, y: 0}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &2581750178935352714
@@ -802,9 +802,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 8033178248258496476}
         m_TargetAssemblyTypeName: ScreenButton, Assembly-CSharp
-        m_MethodName: GoToMenu
+        m_MethodName: EndPractice
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

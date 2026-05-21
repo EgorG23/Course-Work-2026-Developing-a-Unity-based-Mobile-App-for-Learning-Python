@@ -16,12 +16,6 @@ public class ScreenButton : MonoBehaviour
             {
                 ActivateTargetDirectly();
             }
-
-            // Safety fallback: if manager path didn't actually show target, force direct activation.
-            if (!targetScreen.activeInHierarchy)
-            {
-                ActivateTargetDirectly();
-            }
             return;
         }
 
@@ -29,18 +23,11 @@ public class ScreenButton : MonoBehaviour
         {
             PracticeManager.Instance.GoBack();
         }
-        else
-        {
-            Debug.LogWarning("ScreenButton: targetScreen is null and PracticeManager is missing.");
-        }
     }
 
     private void ActivateTargetDirectly()
     {
-        if (targetScreen == null)
-        {
-            return;
-        }
+        if (targetScreen == null) return;
 
         Transform parent = targetScreen.transform.parent;
         if (parent != null)
@@ -53,24 +40,28 @@ public class ScreenButton : MonoBehaviour
                 }
             }
         }
-
         targetScreen.SetActive(true);
     }
 
     public void GoToMenu()
     {
-        if (PracticeManager.Instance != null)
-        {
-            PracticeManager.Instance.ExitToMenu();
-        }
+        EndPractice();
     }
 
     public void EndPractice()
     {
-        if (PracticeManager.Instance != null)
-        {
-            PracticeManager.Instance.FinishPractice();
-        }
+    Debug.Log("[КНОПКА] Клик зафиксирован. Напрямую отправляю команду в GameManager!");
+
+    if (GameManager.Instance != null)
+    {
+        GameManager.Instance.CompletePractice();
+    }
+    else
+    {
+        Debug.LogError("[КНОПКА] Критическая ошибка: GameManager не найден на сцене!");
     }
 
+    Debug.Log("[КНОПКА] Перехожу на сцену LessonsList.");
+    UnityEngine.SceneManagement.SceneManager.LoadScene("LessonsList");
+    }
 }

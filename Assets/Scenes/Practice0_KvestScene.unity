@@ -2004,7 +2004,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4576989827806119832, guid: c51c80928c7b9fd4089abb04e3969844, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 628.06573
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4576989827806119832, guid: c51c80928c7b9fd4089abb04e3969844, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -3015,6 +3015,14 @@ PrefabInstance:
     - target: {fileID: 972548925074513214, guid: fae6334b758349e48a1c89b6f0bc1871, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -70
+      objectReference: {fileID: 0}
+    - target: {fileID: 1605518254353349081, guid: fae6334b758349e48a1c89b6f0bc1871, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1605518254353349081, guid: fae6334b758349e48a1c89b6f0bc1871, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: EndPractice
       objectReference: {fileID: 0}
     - target: {fileID: 3230392966966210373, guid: fae6334b758349e48a1c89b6f0bc1871, type: 3}
       propertyPath: m_AnchorMax.y

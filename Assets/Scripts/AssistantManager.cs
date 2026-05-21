@@ -5,7 +5,6 @@ using UnityEngine.Networking;
 using UnityEngine.SceneManagement;
 using System.Collections;
 
-
 public class BypassCertificate : CertificateHandler
 {
     protected override bool ValidateCertificate(byte[] certificateData) => true;
@@ -13,12 +12,10 @@ public class BypassCertificate : CertificateHandler
 
 public class AssistantManager : MonoBehaviour
 {
-
     public static string BeforeAssistantScene = "LessonsList"; 
     public static string SavedTopic = "Введение";
     public static string SavedSectionType = "Теория";
     public static string SavedTaskDescription = "Изучение базовых понятий Python.";
-
 
     [Header("Кнопка закрытия чата")]
     public Button closeButton; 
@@ -36,27 +33,41 @@ public class AssistantManager : MonoBehaviour
 
     void Start()
     {
+        if (chatHistoryText == null)
+        {
+            Debug.LogError("Критическая ошибка: Поле 'Chat History Text' не привязано в Инспекторе на объекте Assistant_Canvas!");
+            return;
+        }
+
         UpdateWelcomeMessage();
         
-        closeButton.onClick.AddListener(GoBackToGameScene);
-        sendButton.onClick.AddListener(OnSendButtonClicked);
+        if (closeButton != null) closeButton.onClick.AddListener(GoBackToGameScene);
+        if (sendButton != null) sendButton.onClick.AddListener(OnSendButtonClicked);
 
         StartCoroutine(ScrollToBottom());
     }
 
     public void UpdateWelcomeMessage()
     {
-        chatHistoryText.text = $"<b>Ворона:</b> Кар! Привет! Я твой ИИ-наставник. Помогу тебе разобраться. В чём твой вопрос?\n";
+        string topic = string.IsNullOrEmpty(SavedTopic) ? "Изучение Python" : SavedTopic;
+        string section = string.IsNullOrEmpty(SavedSectionType) ? "Теория" : SavedSectionType;
+
+        if (chatHistoryText != null)
+        {
+            chatHistoryText.text = $"<b>Ворона:</b> Кар! Привет! Я твой ИИ-наставник. Помогу тебе разобраться с темой <b>{topic}</b> ({section}). В чём твой вопрос?\n";
+        }
     }
 
     void GoBackToGameScene()
     {
-        SceneManager.LoadScene(BeforeAssistantScene);
+        string sceneToLoad = string.IsNullOrEmpty(BeforeAssistantScene) ? "LessonsList" : BeforeAssistantScene;
+        SceneManager.LoadScene(sceneToLoad);
     }
 
     void OnSendButtonClicked()
     {
-        if (string.IsNullOrWhiteSpace(userInputField.text)) return;
+        if (userInputField == null || string.IsNullOrWhiteSpace(userInputField.text)) return;
+        if (chatHistoryText == null) return;
 
         string userMessage = userInputField.text;
         chatHistoryText.text += $"\n<b>Вы:</b> {userMessage}\n";
@@ -70,10 +81,14 @@ public class AssistantManager : MonoBehaviour
 
     private IEnumerator SendRequestToAI(string userMessage)
     {
+        string topic = string.IsNullOrEmpty(SavedTopic) ? "Изучение Python" : SavedTopic;
+        string section = string.IsNullOrEmpty(SavedSectionType) ? "Теория" : SavedSectionType;
+        string description = string.IsNullOrEmpty(SavedTaskDescription) ? "Базовый контекст задачи" : SavedTaskDescription;
+
         string systemPrompt = $"Ты — мудрая ворона-наставник по имени Кар. Твоя цель — помогать студенту изучать Python.\n" +
                               $"НИКОГДА не пиши готовый код решения задачи за студента.\n" +
-                              $"Сейчас студент находится в разделе '{SavedSectionType}' по теме '{SavedTopic}'.\n" +
-                              $"Контекст окружения/задачи: {SavedTaskDescription}\n" +
+                              $"Сейчас студент находится в разделе '{section}' по теме '{topic}'.\n" +
+                              $"Конкетст окружения/задачи: {description}\n" +
                               $"Отвечай коротко, на русском языке, иногда вставляй 'Кар!'.";
 
         ChatRequest requestData = new ChatRequest();
@@ -102,26 +117,29 @@ public class AssistantManager : MonoBehaviour
 
             yield return request.SendWebRequest();
 
-            string thinkingText = "<color=#888888><b>Ворона:</b> <i>Думаю... (Кар)...</i></color>\n";
-            if (chatHistoryText.text.EndsWith(thinkingText))
+            if (chatHistoryText != null)
             {
-                chatHistoryText.text = chatHistoryText.text.Substring(0, chatHistoryText.text.Length - thinkingText.Length);
-            }
-
-            if (request.result == UnityWebRequest.Result.Success)
-            {
-                string jsonResponse = request.downloadHandler.text;
-                ChatResponse responseData = JsonUtility.FromJson<ChatResponse>(jsonResponse);
-
-                if (responseData != null && responseData.choices != null && responseData.choices.Length > 0)
+                string thinkingText = "<color=#888888><b>Ворона:</b> <i>Думаю... (Кар)...</i></color>\n";
+                if (chatHistoryText.text.EndsWith(thinkingText))
                 {
-                    string aiReply = responseData.choices[0].message.content;
-                    chatHistoryText.text += $"\n<b>Ворона:</b> {aiReply}\n";
+                    chatHistoryText.text = chatHistoryText.text.Substring(0, chatHistoryText.text.Length - thinkingText.Length);
                 }
-            }
-            else
-            {
-                chatHistoryText.text += $"\n<b>Ворона:</b> Кар! Ошибка связи: {request.error}\n";
+
+                if (request.result == UnityWebRequest.Result.Success)
+                {
+                    string jsonResponse = request.downloadHandler.text;
+                    ChatResponse responseData = JsonUtility.FromJson<ChatResponse>(jsonResponse);
+
+                    if (responseData != null && responseData.choices != null && responseData.choices.Length > 0)
+                    {
+                        string aiReply = responseData.choices[0].message.content;
+                        chatHistoryText.text += $"\n<b>Ворона:</b> {aiReply}\n";
+                    }
+                }
+                else
+                {
+                    chatHistoryText.text += $"\n<b>Ворона:</b> Кар! Ошибка связи: {request.error}\n";
+                }
             }
 
             StartCoroutine(ScrollToBottom());

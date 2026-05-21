@@ -940,6 +940,18 @@ public class Lesson1PracticeFlow : MonoBehaviour
 
     private void ShowOfficeAfterCodeSolved()
     {
+        // --- ДОБАВЛЯЕМ ЖЕЛЕЗОБЕТОННОЕ НАЧИСЛЕНИЕ МОНЕТ ---
+        if (GameManager.Instance != null)
+        {
+            Debug.Log("[КВЕСТ 1] Код терминала решен! Отправляю запрос в Банк.");
+            GameManager.Instance.CompletePractice();
+        }
+        else
+        {
+            Debug.LogError("[КВЕСТ 1] Ошибка: GameManager (Банк) не найден на сцене!");
+        }
+        // ------------------------------------------------
+
         ResolveScreens();
         if (officeOnScreen == null)
         {

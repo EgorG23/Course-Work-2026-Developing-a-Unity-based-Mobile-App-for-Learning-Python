@@ -54,58 +54,71 @@ public class GameManager : MonoBehaviour
     }
 
     public void CompletePractice()
+{
+    string activeSceneName = UnityEngine.SceneManagement.SceneManager.GetActiveScene().name;
+    
+    if (activeSceneName.Contains("Practice1"))
     {
-        if (currentLessonIndex >= 0 && currentLessonIndex < practiceCompleted.Length)
-        {
-            if (!practiceCompleted[currentLessonIndex])
-            {
-                practiceCompleted[currentLessonIndex] = true;
-                AddCoins(10, $"Практика №{currentLessonIndex + 1} успешно решена!");
+        currentLessonIndex = 1;
+    }
+    else if (activeSceneName.Contains("Practice0"))
+    {
+        currentLessonIndex = 0;
+    }
+    // Добавь для будущих сцен, если нужно:
+    else if (activeSceneName.Contains("Practice2")) { currentLessonIndex = 2; }
+    else if (activeSceneName.Contains("Practice3")) { currentLessonIndex = 3; }
 
-                if (currentLessonIndex == 0 && isPracticeTimerRunning)
+    Debug.Log($"[БАНК] Метод CompletePractice вызван на сцене: {activeSceneName}. Установлен индекс: {currentLessonIndex}");
+
+    if (currentLessonIndex >= 0 && currentLessonIndex < practiceCompleted.Length)
+    {
+        if (!practiceCompleted[currentLessonIndex])
+        {
+            practiceCompleted[currentLessonIndex] = true;
+            AddCoins(10, $"Практика №{currentLessonIndex + 1} успешно решена!");
+
+            // Логика таймера для первой практики
+            if (currentLessonIndex == 0 && isPracticeTimerRunning)
+            {
+                float duration = Time.time - practiceStartTime;
+                isPracticeTimerRunning = false;
+                Debug.Log($" Практика 0 пройдена за {duration:F1} сек.");
+                
+                if (duration <= 180f)
                 {
-                    float duration = Time.time - practiceStartTime;
-                    isPracticeTimerRunning = false;
-                    Debug.Log($" Практика 0 пройдена за {duration:F1} сек.");
-                    
-                    if (duration <= 180f)
-                    {
-                        achievementFastAsWind = true;
-                        Debug.Log("Достижение 'БЫСТРЕЕ ВЕТРА' разблокировано!");
-                    }
+                    achievementFastAsWind = true;
+                    Debug.Log("Достижение 'БЫСТРЕЕ ВЕТРА' разблокировано!");
                 }
-
-                CheckAchievements();
             }
+
+            CheckAchievements();
+        }
+        else
+        {
+            Debug.LogWarning($"[БАНК] Монеты за индекс {currentLessonIndex} не начислены, так как уровень УЖЕ был пройден ранее!");
         }
     }
-
+}
     public void CheckAchievements()
+{
+    bool allTheoriesCompleted = theoryCompleted[0] && theoryCompleted[1] && theoryCompleted[2] && theoryCompleted[3];
+    bool requiredPracticesCompleted = practiceCompleted[0] && practiceCompleted[1] && practiceCompleted[2];
+
+    if (allTheoriesCompleted && requiredPracticesCompleted && !achievementTheEnd)
     {
-        bool allCompleted = true;
-        for (int i = 0; i < 4; i++)
-        {
-            if (!theoryCompleted[i] || !practiceCompleted[i])
-            {
-                allCompleted = false;
-                break;
-            }
-        }
-
-        if (allCompleted && !achievementTheEnd)
-        {
-            achievementTheEnd = true;
-            Debug.Log("Достижение 'THE END' разблокировано!");
-        }
-
-        if (coins >= 60 && !achievementMoney)
-        {
-            achievementMoney = true;
-            Debug.Log("Достижение 'МАНИ' разблокировано!");
-        }
-
-        SaveData();
+        achievementTheEnd = true;
+        Debug.Log("Достижение 'THE END' разблокировано!");
     }
+
+    if (coins >= 50 && !achievementMoney)
+    {
+        achievementMoney = true;
+        Debug.Log("Достижение 'МАНИ' разблокировано!");
+    }
+
+    SaveData();
+}
 
     private void AddCoins(int amount, string contextMessage)
     {

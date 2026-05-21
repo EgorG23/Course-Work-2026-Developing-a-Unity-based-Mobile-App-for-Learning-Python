@@ -1,14 +1,19 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+
+
 public class Door : MonoBehaviour
+
 {
+
     public GameObject successScreen;
     public GameObject noKeyScreen;
     public bool finishPracticeIfNoSuccessScreen = true;
     public string fallbackSceneName = "LessonsList";
 
     public void TryOpen()
+
     {
         bool hasKey = QuestManager.Instance != null && QuestManager.Instance.hasKey;
 
@@ -37,6 +42,7 @@ public class Door : MonoBehaviour
                 }
             }
         }
+
         else
         {
             Debug.Log("Key required");
@@ -48,3 +54,4 @@ public class Door : MonoBehaviour
         }
     }
 }
+

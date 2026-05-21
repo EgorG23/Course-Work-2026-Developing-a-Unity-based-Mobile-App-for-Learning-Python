@@ -856,6 +856,7 @@ MonoBehaviour:
   practiceSceneName: Practice3_KvestScene
   lessonId: 3
   lessonIndex: 3
+  lockObject: {fileID: 0}
 --- !u!114 &318822614
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1944,6 +1945,7 @@ MonoBehaviour:
   practiceSceneName: Practice2_KvestScene
   lessonId: 2
   lessonIndex: 2
+  lockObject: {fileID: 0}
 --- !u!114 &1523596633
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2111,6 +2113,7 @@ MonoBehaviour:
   practiceSceneName: Practice0_KvestScene
   lessonId: 0
   lessonIndex: 0
+  lockObject: {fileID: 0}
 --- !u!114 &1543728824
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2668,6 +2671,7 @@ MonoBehaviour:
   practiceSceneName: Practice1_KvestScene
   lessonId: 1
   lessonIndex: 1
+  lockObject: {fileID: 1929434407}
 --- !u!114 &2002297008
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -6323,9 +6323,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1350077923}
         m_TargetAssemblyTypeName: ScreenButton, Assembly-CSharp
-        m_MethodName: GoToMenu
+        m_MethodName: EndPractice
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
