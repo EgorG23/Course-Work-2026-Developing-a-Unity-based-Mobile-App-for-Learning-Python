@@ -20,7 +20,11 @@ public class LessonManager : MonoBehaviour
         }
 
         screens = LessonLoader.Instance.screens;
-        ShowScreen(0);
+        int initialIndex = LessonLoader.Instance.returnToLastTheoryScreen
+            ? Mathf.Max(0, screens.Count - 1)
+            : 0;
+        LessonLoader.Instance.returnToLastTheoryScreen = false;
+        ShowScreen(initialIndex);
     }
 
     public void ShowScreen(int index)
@@ -83,6 +87,7 @@ public class LessonManager : MonoBehaviour
             GameManager.Instance.CompleteTheory();
         }
 
+        LessonLoader.Instance.returnToLastTheoryScreen = true;
         SceneManager.LoadScene(LessonLoader.Instance.practiceScene);
     }
 }

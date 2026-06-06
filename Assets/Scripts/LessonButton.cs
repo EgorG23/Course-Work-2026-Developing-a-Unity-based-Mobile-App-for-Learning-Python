@@ -115,6 +115,7 @@ public class LessonButton : MonoBehaviour
         LessonLoader.Instance.screens = lessonScreens;
         LessonLoader.Instance.practiceScene = practiceSceneName;
         LessonLoader.Instance.lessonId = lessonId;
+        LessonLoader.Instance.returnToLastTheoryScreen = false;
 
         if (GameManager.Instance != null)
         {

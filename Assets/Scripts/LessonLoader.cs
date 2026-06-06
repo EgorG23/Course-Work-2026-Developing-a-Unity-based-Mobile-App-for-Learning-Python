@@ -10,6 +10,7 @@ public class LessonLoader : MonoBehaviour
     public GameObject practicePrefab;
 
     public string lessonId;
+    public bool returnToLastTheoryScreen;
 
     void Awake()
     {

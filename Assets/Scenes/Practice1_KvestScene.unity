@@ -233,7 +233,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.64, y: 0.52}
   m_AnchorMax: {x: 0.92, y: 0.6}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -25.00003, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &68162210
@@ -462,7 +462,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.1, y: 0.52}
   m_AnchorMax: {x: 0.36, y: 0.6}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -8, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &130437289
@@ -691,7 +691,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.64, y: 0.64}
   m_AnchorMax: {x: 0.9, y: 0.72}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -13.0000305, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &245274624
@@ -882,7 +882,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.5, b: 0.05, a: 0.28}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.002}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1003,7 +1003,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.5, b: 0.05, a: 0.28}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.002}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1073,7 +1073,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 8, y: 4}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &412865709
@@ -1250,7 +1250,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.5, b: 0.05, a: 0.28}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.002}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1478,7 +1478,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.64, y: 0.4}
   m_AnchorMax: {x: 0.92, y: 0.48}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -25, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &676300428
@@ -1598,7 +1598,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.1, y: 0.64}
   m_AnchorMax: {x: 0.36, y: 0.72}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -8, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &699577387
@@ -1779,7 +1779,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.5, b: 0.05, a: 0.28}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.002}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1943,6 +1943,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 645141280abf3d7438ca315cdbd5f269, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PracticeManager
+  lessonIndex: 0
   screenContainer: {fileID: 1127768959}
   startScreen: {fileID: 0}
 --- !u!224 &740391046
@@ -1975,18 +1976,8 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a7c9d6f98b6f4e67a1f39a8d2d5e4c10, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Lesson1PracticeFlow
-  startScreen: {fileID: 0}
-  officeScreen: {fileID: 0}
-  officeOnScreen: {fileID: 0}
-  electricityScreen: {fileID: 0}
-  computerScreen: {fileID: 0}
-  attentionScreen: {fileID: 0}
-  terminalScreen: {fileID: 0}
-  finalDoorScreen: {fileID: 0}
-  endScreen: {fileID: 0}
-  userDataScreenPrefab: {fileID: 0}
-  userDataPaperSprite: {fileID: 0}
+  m_EditorClassIdentifier: Assembly-CSharp::Practice1Manager
+  userDataScreenPrefab: {fileID: 7588132511405949080, guid: 8b0a4aba449ed4a0da027c47d2dec89c, type: 3}
   noPowerMessage: "\u041F\u041A \u043D\u0435 \u0440\u0430\u0431\u043E\u0442\u0430\u0435\u0442.
     \u0421\u043D\u0430\u0447\u0430\u043B\u0430 \u043F\u043E\u0447\u0438\u043D\u0438
     \u0449\u0438\u0442\u043E\u043A."
@@ -1995,12 +1986,6 @@ MonoBehaviour:
     \u043F\u0440\u043E\u0432\u0435\u0440\u043A\u0438 \u0432 \u0442\u0435\u0440\u043C\u0438\u043D\u0430\u043B\u0435."
   codeSolvedMessage: "\u041F\u0440\u043E\u0432\u0435\u0440\u043A\u0430 \u0432\u043E\u0441\u0441\u0442\u0430\u043D\u043E\u0432\u043B\u0435\u043D\u0430.
     \u0414\u0432\u0435\u0440\u044C \u0440\u0430\u0437\u0431\u043B\u043E\u043A\u0438\u0440\u043E\u0432\u0430\u043D\u0430."
-  autoArrangePuzzleButtons: 0
-  showPuzzleHitboxes: 0
-  createPuzzleInEditor: 1
-  createHotspotsInEditor: 1
-  showHotspotsInEditor: 1
-  keepExistingHotspotPlacement: 1
 --- !u!1 &743314481
 GameObject:
   m_ObjectHideFlags: 0
@@ -2036,7 +2021,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.1, y: 0.4}
   m_AnchorMax: {x: 0.36, y: 0.48}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -8, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &743314483
@@ -2952,7 +2937,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.5, b: 0.05, a: 0.28}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.002}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -3501,7 +3486,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.1, y: 0.28}
   m_AnchorMax: {x: 0.36, y: 0.36}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -8, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1407838088
@@ -3774,61 +3759,6 @@ Material:
     - _UnderlayColor: {r: 0, g: 0, b: 0, a: 0.5}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
---- !u!1 &1579123155
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1579123157}
-  - component: {fileID: 1579123158}
-  m_Layer: 5
-  m_Name: QuestManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1579123157
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1579123155}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 540, y: 960}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1579123158
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1579123155}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4de5bcd1b55de454c8e04f1314c7386a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::QuestManager
-  foundClue: 0
-  knowsCommand: 0
-  knowsVersion: 0
-  hasKey: 0
-  pythonVersion: 
-  powerFixed: 0
-  codeSolved: 0
 --- !u!1 &1694496532
 GameObject:
   m_ObjectHideFlags: 0
@@ -3925,7 +3855,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.5, b: 0.05, a: 0.28}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.002}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -4051,7 +3981,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.5, b: 0.05, a: 0.28}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.002}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -4172,7 +4102,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.5, b: 0.05, a: 0.28}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.002}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -4511,7 +4441,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.5, b: 0.05, a: 0.28}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.002}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -4571,7 +4501,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.64, y: 0.28}
   m_AnchorMax: {x: 0.92, y: 0.36}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -25.00003, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2027922655
@@ -5125,13 +5055,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2700653096452261825, guid: 68614c03589f00e4882c1f245da0e337, type: 3}
+      propertyPath: m_Sprite
+      value:
+      objectReference: {fileID: 1763897773879135210, guid: e882b7297a4d0408b98aca59e092c084, type: 3}
     - target: {fileID: 3748123589967548971, guid: 68614c03589f00e4882c1f245da0e337, type: 3}
       propertyPath: m_Name
       value: Electricity
       objectReference: {fileID: 0}
     - target: {fileID: 3748123589967548971, guid: 68614c03589f00e4882c1f245da0e337, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4713486433855328157, guid: 68614c03589f00e4882c1f245da0e337, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -5169,6 +5103,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -2539
       objectReference: {fileID: 0}
+    - target: {fileID: 7293004917481837417, guid: 68614c03589f00e4882c1f245da0e337, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7932670948579773082, guid: 68614c03589f00e4882c1f245da0e337, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
@@ -5179,7 +5117,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7932670948579773082, guid: 68614c03589f00e4882c1f245da0e337, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 1316.0007
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7932670948579773082, guid: 68614c03589f00e4882c1f245da0e337, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -5818,11 +5756,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4347067779135625564, guid: 579c15da28fb4fe419a999acb83a1178, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 1029.865
+      value: 1074.3376
       objectReference: {fileID: 0}
     - target: {fileID: 4347067779135625564, guid: 579c15da28fb4fe419a999acb83a1178, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -2474.0366
+      value: -2400.955
       objectReference: {fileID: 0}
     - target: {fileID: 4936277420105359589, guid: 579c15da28fb4fe419a999acb83a1178, type: 3}
       propertyPath: m_AnchorMax.y
@@ -5838,11 +5776,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4936277420105359589, guid: 579c15da28fb4fe419a999acb83a1178, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 1029.865
+      value: 1074.3376
       objectReference: {fileID: 0}
     - target: {fileID: 4936277420105359589, guid: 579c15da28fb4fe419a999acb83a1178, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -1744.3333
+      value: -1671.2517
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6415,4 +6353,3 @@ SceneRoots:
   - {fileID: 794796227}
   - {fileID: 944991748}
   - {fileID: 740391046}
-  - {fileID: 1579123157}

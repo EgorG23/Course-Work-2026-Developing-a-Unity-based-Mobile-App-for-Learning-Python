@@ -18,6 +18,30 @@ public class GameManager : MonoBehaviour
 
     public int coins = 0;
 
+    [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
+    private static void Bootstrap()
+    {
+        GetOrCreate();
+    }
+
+    public static GameManager GetOrCreate()
+    {
+        if (Instance != null)
+        {
+            return Instance;
+        }
+
+        GameManager existing = Object.FindFirstObjectByType<GameManager>(FindObjectsInactive.Include);
+        if (existing != null)
+        {
+            existing.gameObject.SetActive(true);
+            return existing;
+        }
+
+        GameObject gameManagerObject = new GameObject(nameof(GameManager));
+        return gameManagerObject.AddComponent<GameManager>();
+    }
+
     void Awake()
     {
         if (Instance == null)
@@ -32,6 +56,13 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    private void OnDestroy()
+    {
+        if (Instance == this)
+        {
+            Instance = null;
+        }
+    }
 
     public void StartPracticeTimer()
     {
@@ -53,53 +84,39 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void CompletePractice()
-{
-    string activeSceneName = UnityEngine.SceneManagement.SceneManager.GetActiveScene().name;
-    
-    if (activeSceneName.Contains("Practice1"))
+    public void CompletePractice(int lessonIndex)
     {
-        currentLessonIndex = 1;
-    }
-    else if (activeSceneName.Contains("Practice0"))
-    {
-        currentLessonIndex = 0;
-    }
-    // Добавь для будущих сцен, если нужно:
-    else if (activeSceneName.Contains("Practice2")) { currentLessonIndex = 2; }
-    else if (activeSceneName.Contains("Practice3")) { currentLessonIndex = 3; }
-
-    Debug.Log($"[БАНК] Метод CompletePractice вызван на сцене: {activeSceneName}. Установлен индекс: {currentLessonIndex}");
-
-    if (currentLessonIndex >= 0 && currentLessonIndex < practiceCompleted.Length)
-    {
-        if (!practiceCompleted[currentLessonIndex])
+        if (lessonIndex < 0 || lessonIndex >= practiceCompleted.Length)
         {
-            practiceCompleted[currentLessonIndex] = true;
-            AddCoins(10, $"Практика №{currentLessonIndex + 1} успешно решена!");
+            Debug.LogError($"Неверный индекс практики: {lessonIndex}");
+            return;
+        }
 
-            // Логика таймера для первой практики
-            if (currentLessonIndex == 0 && isPracticeTimerRunning)
+        currentLessonIndex = lessonIndex;
+        if (practiceCompleted[lessonIndex])
+        {
+            Debug.LogWarning($"Практика {lessonIndex} уже была пройдена.");
+            return;
+        }
+
+        practiceCompleted[lessonIndex] = true;
+        AddCoins(10, $"Практика №{lessonIndex + 1} успешно решена!");
+
+        if (lessonIndex == 0 && isPracticeTimerRunning)
+        {
+            float duration = Time.time - practiceStartTime;
+            isPracticeTimerRunning = false;
+            Debug.Log($"Практика 0 пройдена за {duration:F1} сек.");
+
+            if (duration <= 180f)
             {
-                float duration = Time.time - practiceStartTime;
-                isPracticeTimerRunning = false;
-                Debug.Log($" Практика 0 пройдена за {duration:F1} сек.");
-                
-                if (duration <= 180f)
-                {
-                    achievementFastAsWind = true;
-                    Debug.Log("Достижение 'БЫСТРЕЕ ВЕТРА' разблокировано!");
-                }
+                achievementFastAsWind = true;
+                Debug.Log("Достижение 'БЫСТРЕЕ ВЕТРА' разблокировано!");
             }
+        }
 
-            CheckAchievements();
-        }
-        else
-        {
-            Debug.LogWarning($"[БАНК] Монеты за индекс {currentLessonIndex} не начислены, так как уровень УЖЕ был пройден ранее!");
-        }
+        CheckAchievements();
     }
-}
     public void CheckAchievements()
 {
     bool allTheoriesCompleted = theoryCompleted[0] && theoryCompleted[1] && theoryCompleted[2] && theoryCompleted[3];

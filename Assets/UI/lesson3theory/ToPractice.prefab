@@ -384,7 +384,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55ca5b3bdd330c74f87c3c3d8158e9ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LessonPrefabButton
-  action: 3
+  action: 2
 --- !u!1 &6874293890390476752
 GameObject:
   m_ObjectHideFlags: 0

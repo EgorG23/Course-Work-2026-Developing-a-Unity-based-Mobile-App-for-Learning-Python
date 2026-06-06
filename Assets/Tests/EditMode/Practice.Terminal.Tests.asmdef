@@ -1,0 +1,21 @@
+{
+  "name": "Practice.Terminal.Tests",
+  "rootNamespace": "",
+  "references": [
+    "GUID:3ee5b18468ab4d89a5774c5844a8d4ce"
+  ],
+  "includePlatforms": [
+    "Editor"
+  ],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": false,
+  "precompiledReferences": [],
+  "autoReferenced": false,
+  "defineConstraints": [],
+  "versionDefines": [],
+  "noEngineReferences": false,
+  "optionalUnityReferences": [
+    "TestAssemblies"
+  ]
+}

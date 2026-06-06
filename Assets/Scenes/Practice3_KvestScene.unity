@@ -225,6 +225,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1180262929}
+  - component: {fileID: 1180262930}
+  - component: {fileID: 1180262931}
   m_Layer: 5
   m_Name: ScreenContainer
   m_TagString: Untagged
@@ -255,6 +257,33 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1180262930
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1180262928}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 645141280abf3d7438ca315cdbd5f269, type: 3}
+  m_Name:
+  m_EditorClassIdentifier: Assembly-CSharp::PracticeManager
+  lessonIndex: 3
+  screenContainer: {fileID: 1180262929}
+  startScreen: {fileID: 0}
+--- !u!114 &1180262931
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1180262928}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a7f7ff78e3848b99dac30dd7bca4577, type: 3}
+  m_Name:
+  m_EditorClassIdentifier: Assembly-CSharp::Practice3Manager
 --- !u!224 &1274593372 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2557729436313265370, guid: 4cf23dc1b6c4aa1419a7cbb77144f435, type: 3}

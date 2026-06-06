@@ -622,7 +622,7 @@ GameObject:
   - component: {fileID: 1786040747}
   - component: {fileID: 1786040748}
   m_Layer: 5
-  m_Name: QuestManager
+  m_Name: Practice0Manager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -656,16 +656,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1786040746}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4de5bcd1b55de454c8e04f1314c7386a, type: 3}
+  m_Script: {fileID: 11500000, guid: 39758153b76ae423e876e0685ce992c7, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::QuestManager
-  foundClue: 0
-  knowsCommand: 0
-  knowsVersion: 0
-  hasKey: 0
-  pythonVersion: 
-  powerFixed: 0
-  codeSolved: 0
+  m_EditorClassIdentifier: Assembly-CSharp::Practice0Manager
 --- !u!1 &1798760420 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3842390713089836875, guid: c5b1df24ab29094489e6852794e2a76f, type: 3}
